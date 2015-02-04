@@ -3,17 +3,23 @@
  */
 
 /* local variables */
-@default-gradient: linear-gradient(#ededed, #ededed 38%, #dedede);
-@disabled-gradient: linear-gradient(#f1f1f1, #f1f1f1 38%, #e6e6e6);
-@active-gradient: linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
-@hover-gradient: linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
 @default-element-height: 1.1rem;
+@disabled-gradient: linear-gradient(#f1f1f1, #f1f1f1 40%, #e6e6e6);
+
+@default-gradient: linear-gradient(#ededed, #ededed 40%, #dedede);
+@defaullt-gradient-active: linear-gradient(darken(#ededed, 2.2%), darken(#ededed, 2.2%) 40%, darken(#dedede, 2.6%));
+@default-gradient-hover: linear-gradient(lighten(#ededed, 1%), lighten(#ededed, 1%) 40%, lighten(#dedede, 0.8%));
+
+@primary-gradient: linear-gradient(#83b1fc, #649ffc 40%, #4d90fe);
+@primary-gradient-active: linear-gradient(darken(#83b1fc, 2.2%), darken(#649ffc, 2.2%) 40%, darken(#4d90fe, 2.6%));
+@primary-gradient-hover: linear-gradient(lighten(#83b1fc, 1.333%), lighten(#649ffc, 1.333%) 40%,lighten(#4d90fe, 1.133%));
+
 @caret-down: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF8AAABfABv7gDTAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACUSURBVBiVjYyhCsJQGEbPzzXZTMLQsgcQbW7NmwaCxTfQ4jP4KkajwTfQuHSZFtsYoqB1mETcb7EoY3ridzifdEO7QAkoQ0jMPZ845x6lHqgJLBXGQOPL5VLovCoGMNdTdvTa/l6FCKi/95uITJN4s66KAQzA5ZylzZZ/EBgCT7SY7eLtCtBfBx90Qmt7/cEIkH+bF58MKoZeuLozAAAAAElFTkSuQmCC";
 @caret-down-disabled: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF2AAABdgBCRoqvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACFSURBVBiVjcsxCgIxGEThN4sX8Di2HsBGsgE7RQhewatYWiWFhZ2tF7DLKSSwLFZCflvRZfWVM3yKMR4kzRhI0q2UsgkhPId+gAlwNLOlpOnH15nZfgwDNN77q6QVcH/be2Dbtu15DAM0AM65i6Q10AGPWusu53z6hb9KKc1TSgsz07/mBZ61K+ONNAX0AAAAAElFTkSuQmCC";
 @checkbox-background: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wDBhYcG79aGIsAAACbSURBVBjTjdFBCkFhFAXgj4fp24PBy0SZ2ICRXRgYGb2xlKzBSEo2YgsiKWVoZgFKMjD5X/2Ux6lb99bpnNO5lKMR5i8MsEQHkhJiEzlS9HCqfiFWMUIt3AfsC3KKLCL30Qr7HfM4Ro4h6rhiEqmusIMKuphGqo+ogSPGcbYLzh91vdkXSHDDBk+0gxussS3rNcMCs+D6E18/9gLPPhbDshfzLgAAAABJRU5ErkJggg==";
 
 /* default form input styles */
-select, input[type="checkbox"], input[type="radio"], input[type="button"], button, .button {
+select, input[type="checkbox"], input[type="radio"], input[type="button"], button, .or-button {
 	.lh-background-image(@default-gradient);
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	.lh-border-radius(@base-radius);
@@ -86,24 +92,34 @@ select {
 }
 
 /* buttons */
-button, .button {
+button, .or-button {
 	min-height: (@base-spacing*2);
 	display: inline-block;
 	padding: (@base-spacing/4) @base-spacing (@base-spacing/5);
 	text-decoration: none;
 	vertical-align: middle;
 
-	.button-icon {
+	.or-button-icon {
 		font-size: 1em;
 	}
 
-	.button-icon--left {
+	.or-button-icon--left {
 		padding-right: (@base-spacing/4);
 	}
 
-	.button-icon--right {
+	.or-button-icon--right {
 		padding-left: (@base-spacing/4);
 	}
+}
+
+/* primary buttons */
+button.or-button-primary:enabled, .or-button.or-button-primary:enabled {
+	.lh-background-image(@primary-gradient);
+	border-color: darken(@active-color, 5%);
+	.lh-border-radius(@base-radius);
+	.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.16), inset 0 1px 2px rgba(255, 255, 255, 0.25));
+	color: @white;
+	text-shadow: 0 1px 0 darken(@active-color, 2.5%);
 }
 
 /* text and number inputs */
@@ -131,7 +147,7 @@ input[type="text"], input[type="number"], input[type="password"] {
 }
 
 /* focused elements */
-select, input[type="checkbox"], input[type="password"], input[type="radio"], input[type="text"], input[type="number"], button, .button {
+select, input[type="checkbox"], input[type="password"], input[type="radio"], input[type="text"], input[type="number"], button, .or-button {
 	&:focus {
 		.lh-transition(border-color 200ms);
 		border-color: @active-color;
@@ -140,7 +156,7 @@ select, input[type="checkbox"], input[type="password"], input[type="radio"], inp
 }
 
 /* disabled elements */
-button, .button, select {
+button, .or-button, select {
 	&:disabled {
 		.lh-background-image(@disabled-gradient);
 		border-color: rgba(80, 80, 80, 0.2);
@@ -167,28 +183,43 @@ input[type="password"], input[type="number"], input[type="text"] {
 }
 
 /* hovering elements */
-select, input[type="checkbox"], input[type="radio"], button, .button {
+select, input[type="checkbox"], input[type="radio"], button, .or-button {
 	&:hover:enabled {
-		.lh-background-image(@hover-gradient);
+		.lh-background-image(@default-gradient-hover);
 		border-color: rgba(0, 0, 0, 0.3);
 		.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95));
-		color: black;
+	}
+}
+
+button.or-button-primary, .or-button.or-button-primary {
+	&:hover:enabled {
+		.lh-background-image(@primary-gradient-hover);
+		border-color: darken(@active-color, 7.5%);
+		.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(255, 255, 255, 0.33));
 	}
 }
 
 select:hover:enabled {
-	background-image: url(@caret-down), @hover-gradient;
+	background-image: url(@caret-down), @default-gradient-hover;
 }
 
 /* active elements */
-select, input[type="checkbox"], input[type="radio"], button, .button {
+select, input[type="checkbox"], input[type="radio"], button, .or-button {
 	&:active:enabled {
-		.lh-background-image(@active-gradient);
+		.lh-background-image(@defaullt-gradient-active);
+		.lh-box-shadow(none);
+		text-shadow: none;
+	}
+}
+
+button.or-button-primary, .or-button.or-button-primary {
+	&:active:enabled {
+		.lh-background-image(@primary-gradient-active);
 		.lh-box-shadow(none);
 		text-shadow: none;
 	}
 }
 
 select:active:enabled {
-	background-image: url(@caret-down), @active-gradient;
+	background-image: url(@caret-down), @defaullt-gradient-active;
 }

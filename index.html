@@ -46,10 +46,17 @@
 			<p>
 				<button>Button</button>
 				&nbsp;&nbsp;
-				<a href="#" class="button">Link button</a>
+				<button class="or-button-primary">Button</button>
+				&nbsp;&nbsp;
+				<a href="#" class="or-button">Link button</a>
 				&nbsp;&nbsp;
 				<button>
-					<i class="fa fa-times button-icon button-icon--left"></i>
+					<i class="fa fa-times or-button-icon or-button-icon--left"></i>
+					Button
+				</button>
+				&nbsp;&nbsp;
+				<button class="or-button-primary" disabled="disabled">
+					<i class="fa fa-times or-button-icon or-button-icon--left"></i>
 					Button
 				</button>
 				&nbsp;&nbsp;
@@ -57,7 +64,7 @@
 				&nbsp;&nbsp;
 				<button disabled="disabled">
 					Disabled button
-					<i class="fa fa-times button-icon button-icon--right"></i>
+					<i class="fa fa-times or-button-icon or-button-icon--right"></i>
 				</button>
 			</p>
 			<p>
@@ -107,11 +114,35 @@
 
 		<section>
 			<header>
+				<h1>Menus</h1>
+			</header>
+			<div class="or-grid-row">
+				<div class="or-grid-sm-1-2">
+					<ul class="or-menu">
+						<li class="or-menu-header">OR Menu Header</li>
+						<li class="or-menu-child or-menu-child--active"><a href="#">OR Menu Item</a></li>
+						<li class="or-menu-child"><a href="#">OR Menu Item</a></li>
+						<li class="or-menu-child"><a href="#">OR Menu Item</a></li>
+					</ul>
+				</div>
+				<div class="or-grid-sm-1-2">
+					<ul class="or-menu or-menu-primary">
+						<li class="or-menu-header">OR Menu Header</li>
+						<li class="or-menu-child or-menu-child--active"><a href="#">OR Menu Item</a></li>
+						<li class="or-menu-child"><a href="#">OR Menu Item</a></li>
+						<li class="or-menu-child"><a href="#">OR Menu Item</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<header>
 				<h1>Tables</h1>
 			</header>
 			<div class="or-grid-row">
 				<div class="or-grid-sm-1-3">
-					<table>
+					<table class="or-table-primary">
 						<thead>
 							<tr>
 								<th>Table header</th>
