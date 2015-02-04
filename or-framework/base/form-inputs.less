@@ -8,18 +8,15 @@
 @active-gradient: linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
 @hover-gradient: linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
 @default-element-height: 1.1rem;
-
 @caret-down: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF8AAABfABv7gDTAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACUSURBVBiVjYyhCsJQGEbPzzXZTMLQsgcQbW7NmwaCxTfQ4jP4KkajwTfQuHSZFtsYoqB1mETcb7EoY3ridzifdEO7QAkoQ0jMPZ845x6lHqgJLBXGQOPL5VLovCoGMNdTdvTa/l6FCKi/95uITJN4s66KAQzA5ZylzZZ/EBgCT7SY7eLtCtBfBx90Qmt7/cEIkH+bF58MKoZeuLozAAAAAElFTkSuQmCC";
-
 @caret-down-disabled: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF2AAABdgBCRoqvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACFSURBVBiVjcsxCgIxGEThN4sX8Di2HsBGsgE7RQhewatYWiWFhZ2tF7DLKSSwLFZCflvRZfWVM3yKMR4kzRhI0q2UsgkhPId+gAlwNLOlpOnH15nZfgwDNN77q6QVcH/be2Dbtu15DAM0AM65i6Q10AGPWusu53z6hb9KKc1TSgsz07/mBZ61K+ONNAX0AAAAAElFTkSuQmCC";
-
 @checkbox-background: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wDBhYcG79aGIsAAACbSURBVBjTjdFBCkFhFAXgj4fp24PBy0SZ2ICRXRgYGb2xlKzBSEo2YgsiKWVoZgFKMjD5X/2Ux6lb99bpnNO5lKMR5i8MsEQHkhJiEzlS9HCqfiFWMUIt3AfsC3KKLCL30Qr7HfM4Ro4h6rhiEqmusIMKuphGqo+ogSPGcbYLzh91vdkXSHDDBk+0gxussS3rNcMCs+D6E18/9gLPPhbDshfzLgAAAABJRU5ErkJggg==";
 
 /* default form input styles */
 select, input[type="checkbox"], input[type="radio"], input[type="button"], button, .button {
 	.lh-background-image(@default-gradient);
 	border: 1px solid rgba(0, 0, 0, 0.25);
-	.lh-border-radius(@button-radius);
+	.lh-border-radius(@base-radius);
 	.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75));
 	color: @black;
 	font: inherit;
@@ -76,7 +73,7 @@ select {
 	background-image: url(@caret-down), @default-gradient;
 	background-position: right center;
 	background-repeat: no-repeat;
-	padding: (@base-spacing/5) (@base-spacing*2) (@base-spacing/15) (@base-spacing/2);
+	padding: (@base-spacing/5) (@base-spacing*2) (@base-spacing/12) (@base-spacing/2);
 	.lh-appearance(none);
 }
 
@@ -112,7 +109,7 @@ button, .button {
 /* text and number inputs */
 input[type="text"], input[type="number"], input[type="password"] {
 	border: 1px solid lighten(@grey-dark, 15%);
-	.lh-border-radius(@button-radius);
+	.lh-border-radius(@base-radius);
 	color: @black;
 	font: inherit;
 	margin: 0;
@@ -137,7 +134,7 @@ input[type="text"], input[type="number"], input[type="password"] {
 select, input[type="checkbox"], input[type="password"], input[type="radio"], input[type="text"], input[type="number"], button, .button {
 	&:focus {
 		.lh-transition(border-color 200ms);
-		border-color: @button-active-border-color;
+		border-color: @active-color;
 		outline: none;
 	}
 }

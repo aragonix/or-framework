@@ -1,0 +1,68 @@
+/**
+ *  OR Framework - Tables
+ */
+
+table {
+	margin: 0;
+	padding: 0;
+
+	th, td {
+		cursor: default;
+		margin: 0;
+		padding: 0;
+	}
+
+	thead {
+		border-bottom: 1px solid @grey;
+
+		tr {
+
+			th {
+				font-weight: 700;
+				padding-bottom: (@base-spacing/2);
+				padding-right: (@base-spacing*1.5);
+				text-align: left;
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	tbody {
+
+		tr {
+
+			td {
+				padding: (@base-spacing/1.5) 0;
+			}
+		}
+	}
+}
+
+/* fixed tables */
+table.or-table-fixed {
+	table-layout: fixed;
+	width: 100%;
+
+	thead tr th {
+		padding-right: 0;
+	}
+}
+
+/* striped tables */
+table.or-table-striped {
+
+	tbody tr:nth-child(even) td {
+		background: lighten(@grey, 2.5%);
+	}
+}
+
+/* hoverable tables */
+table.or-table-hover {
+
+	tbody tr:hover td {
+		background: @attention-color;
+	}
+}

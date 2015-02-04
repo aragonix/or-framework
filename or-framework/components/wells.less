@@ -1,0 +1,16 @@
+/**
+ *  OR Framework - Wells
+ */
+
+.or-well {
+	background: lighten(@grey, 5%);
+	border: 1px solid darken(@grey, 2.5%);
+	.lh-border-radius(@base-radius);
+	.lh-box-shadow(inset 0 0 1px 0 @white);
+	padding: @base-spacing;
+}
+
+.or-well.or-well-primary {
+	background: @attention-color;
+	border: 1px solid lighten(@active-color, 25%);
+}

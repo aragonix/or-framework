@@ -12,6 +12,13 @@ html {
 	font-size: @base-font-size;
 }
 
+// adjust font size for firefox
+@-moz-document url-prefix() {
+	html {
+		font-size: (@base-font-size - 5%);
+	}
+}
+
 .or-clearfix, .or-clear {
 	clear: both;
 	&:after {
