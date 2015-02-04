@@ -2980,17 +2980,17 @@ html {
   color: #303942;
   font-size: 12px;
 }
-.clearfix,
-.clear {
+.or-clearfix,
+.or-clear {
   clear: both;
 }
-.clearfix:after,
-.clear:after {
+.or-clearfix:after,
+.or-clear:after {
   content: "";
   display: table;
   clear: both;
 }
-.hide-text-overflow {
+.or-hide-text-overflow {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -3043,7 +3043,7 @@ p {
 p:last-of-type {
   margin-bottom: 0;
 }
-/* styles */
+/* text styles */
 strong,
 .or-text-strong {
   font-weight: 700;
