@@ -1,0 +1,28 @@
+/**
+ *  OR Framework - Base styles
+ */
+
+* {
+	.lh-box-sizing(border-box);
+	line-height: @base-line-height;
+}
+
+html {
+	color: @black;
+	font-size: @base-font-size;
+}
+
+.clearfix,.clear {
+	clear: both;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.hide-text-overflow {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

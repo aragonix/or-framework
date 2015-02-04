@@ -2,6 +2,10 @@
  *  OR Framework - Stylesheet
  */
 
+/* Plugins */
+@import "vendor/lesshat.less";
+@import "vendor/animate.less";
+
 /* Variables */
 @base-line-height: 1;
 @base-font-size: 12px;
@@ -17,10 +21,19 @@
 @grey-darkest: #464E5A;
 
 @button-radius: 2px;
+@button-active-border-color: #4d90fe;
 
-/* Modules */
-@import "modules/normalize.less";
-@import "modules/base.less";
-@import "modules/typography.less";
-@import "modules/headers.less";
-@import "modules/form-inputs.less";
+@me-sm: 35.5rem;
+@me-md: 48rem;
+@me-lg: 68rem;
+@me-xl: 80rem;
+
+/* Base modules */
+@import "base/normalize.less";
+@import "base/base.less";
+@import "base/typography.less";
+@import "base/form-inputs.less";
+
+/* Optional components */
+@import "components/grid.less";
+@import "components/headers.less";

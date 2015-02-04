@@ -1,0 +1,185 @@
+/**
+ *  OR Framework - Form inputs
+ */
+
+/* local variables */
+@default-gradient: linear-gradient(#ededed, #ededed 38%, #dedede);
+@disabled-gradient: linear-gradient(#f1f1f1, #f1f1f1 38%, #e6e6e6);
+@active-gradient: linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+@hover-gradient: linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+@default-element-height: 1.1rem;
+
+/* default form input styles */
+select, input[type="checkbox"], input[type="radio"], input[type="button"], button, .button {
+	.lh-background-image(@default-gradient);
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	.lh-border-radius(@button-radius);
+	.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75));
+	color: @black;
+	font: inherit;
+	text-shadow: 0 1px 0 darken(@white, 6%);
+	.lh-user-select(none);
+	-webkit-appearance: none;
+}
+
+/* checkbox & radio sizes+offsets */
+input[type="checkbox"], input[type="radio"] {
+	height: @default-element-height;
+	margin-right: (@base-spacing/4);
+	position: relative;
+	vertical-align: middle;
+	width: @default-element-height;
+
+	&:checked::before {
+		content: "";
+		display: block;
+	}
+}
+
+/* checkboxes */
+input[type="checkbox"] {
+	bottom: 2px;
+
+	&:checked::before {
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wDBhYcG79aGIsAAACbSURBVBjTjdFBCkFhFAXgj4fp24PBy0SZ2ICRXRgYGb2xlKzBSEo2YgsiKWVoZgFKMjD5X/2Ux6lb99bpnNO5lKMR5i8MsEQHkhJiEzlS9HCqfiFWMUIt3AfsC3KKLCL30Qr7HfM4Ro4h6rhiEqmusIMKuphGqo+ogSPGcbYLzh91vdkXSHDDBk+0gxussS3rNcMCs+D6E18/9gLPPhbDshfzLgAAAABJRU5ErkJggg==");
+		background-size: 100% 100%;
+		height: 100%;
+		width: 100%;
+		.lh-user-select(none);
+	}
+}
+
+/* radio buttons */
+input[type="radio"] {
+	.lh-border-radius(100%);
+	bottom: 3px;
+
+	&:checked::before {
+		background-color: @grey-darkest;
+		.lh-border-radius(100%);
+		bottom: 3px;
+		left: 3px;
+		position: absolute;
+		right: 3px;
+		top: 3px;
+	}
+}
+
+/* select */
+select {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAWklEQVQokWNgoAOIAuI0PDiKaJMSgYCZmfkbkPkfHYPEQfJEG/b//3+FBQsWLGRjY/uJbBCIDxIHyRNtGDYDyTYI3UA+Pr4vFBmEbODbt2+bKDYIyUBWYtQBAIRzRP/XKJ//AAAAAElFTkSuQmCC), @default-gradient;
+	background-position: right center;
+	background-repeat: no-repeat;
+	padding: (@base-spacing/7) (@base-spacing*2) (@base-spacing/7) (@base-spacing/2);
+	.lh-appearance(none);
+}
+
+/* mozilla hack to align select text and remove outline */
+@-moz-document url-prefix() {
+	select {
+		padding-bottom: (@base-spacing/2.8);
+		padding-top: (@base-spacing/2.8);
+	}
+}
+
+/* buttons */
+button, .button {
+	padding: (@base-spacing/4.75) (@base-spacing);
+	display: inline-block;
+	text-decoration: none;
+
+	.button-icon--left {
+		padding-right: (@base-spacing/2);
+	}
+
+	.button-icon--right {
+		padding-left: (@base-spacing/2);
+	}
+}
+
+/* chrome hack to align a.button with default button elements */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.button {
+		position: relative;
+		top: 1px;
+	}
+}
+
+/* text and number inputs */
+input[type="text"], input[type="number"], input[type="password"] {
+	border: 1px solid lighten(@grey-dark, 15%);
+	.lh-border-radius(@button-radius);
+	color: @black;
+	font: inherit;
+	margin: 0;
+	padding: (@base-spacing/4.5);
+
+	// chrome hack to align placeholder vertically
+	&::-webkit-input-placeholder {
+		position: relative;
+		top: 1px;
+	}
+}
+
+/* focused elements */
+select, input[type="checkbox"], input[type="password"], input[type="radio"], input[type="text"], input[type="number"], button, .button {
+	&:focus {
+		.lh-transition(border-color 200ms);
+		border-color: @button-active-border-color;
+		outline: none;
+	}
+}
+
+/* disabled elements */
+button, .button, select {
+	&:disabled {
+		.lh-background-image(@disabled-gradient);
+		border-color: rgba(80, 80, 80, 0.2);
+		.lh-box-shadow(0 1px 0 rgba(80, 80, 80, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75));
+		color: #aaa;
+		cursor: default;
+	}
+}
+
+select:disabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAAXNSR0IArs4c6QAAAAd0SU1FB9sLAxYEBKriBmwAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAACxMAAAsTAQCanBgAAABLSURBVCiRY2CgA4gC4jQ8OIpokxKBoKGh4T8uDJIn2rD///8rLFiwYCE2g0DiIHkSfIndQLIMwmYgRQYhG/j27dsmig1CMpCVGHUAo8FcsHfxfXQAAAAASUVORK5CYII="), @disabled-gradient;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	&:disabled {
+		.lh-opacity(0.75);
+	}
+}
+
+input[type="password"], input[type="number"], input[type="text"] {
+	&:disabled {
+		color: @grey-dark;
+	}
+}
+
+/* hovering elements */
+select, input[type="checkbox"], input[type="radio"], button, .button {
+	&:hover:enabled {
+		.lh-background-image(@hover-gradient);
+		border-color: rgba(0, 0, 0, 0.3);
+		.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95));
+		color: black;
+	}
+}
+
+select:hover:enabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAWklEQVQokWNgoAOIAuI0PDiKaJMSgYCZmfkbkPkfHYPEQfJEG/b//3+FBQsWLGRjY/uJbBCIDxIHyRNtGDYDyTYI3UA+Pr4vFBmEbODbt2+bKDYIyUBWYtQBAIRzRP/XKJ//AAAAAElFTkSuQmCC"), @hover-gradient;
+}
+
+/* active elements */
+select, input[type="checkbox"], input[type="radio"], button, .button {
+	&:active:enabled {
+		.lh-background-image(@active-gradient);
+		.lh-box-shadow(none);
+		text-shadow: none;
+	}
+}
+
+select:active:enabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAYAAAAbQcSUAAAAWklEQVQokWNgoAOIAuI0PDiKaJMSgYCZmfkbkPkfHYPEQfJEG/b//3+FBQsWLGRjY/uJbBCIDxIHyRNtGDYDyTYI3UA+Pr4vFBmEbODbt2+bKDYIyUBWYtQBAIRzRP/XKJ//AAAAAElFTkSuQmCC"), @active-gradient;
+}
