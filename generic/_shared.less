@@ -1,0 +1,46 @@
+/*------------------------------------*\
+	OR Framework - Shared styles
+\*------------------------------------*/
+
+/**
+ *  Shared margins
+ */
+
+.islet {
+	margin-bottom: ((@base-spacing-modifier/2) * 1rem);
+}
+
+.island {
+	margin-bottom: (@base-spacing-modifier * 1rem);
+}
+
+.landmark {
+	margin-bottom: ((@base-spacing-modifier*2) * 1rem);
+}
+
+hr {
+	.islet;
+}
+
+
+/**
+ *  Size and spacing helpers
+ */
+
+.style-helpers-generator(@n, @i: 1) when (@i =< @n) {
+	@value: (((@i /10)*@base-spacing-modifier) * 1rem);
+	.fs@{i} {font-size:@value;}
+	.m@{i} {margin:@value;}
+	.mt@{i} {margin-top:@value;}
+	.mr@{i} {margin-right:@value;}
+	.mb@{i} {margin-bottom:@value;}
+	.ml@{i} {margin-left:@value;}
+	.p@{i} {padding:@value;}
+	.pt@{i} {padding-top:@value;}
+	.pr@{i} {padding-right:@value;}
+	.pb@{i} {padding-bottom:@value;}
+	.pl@{i} {padding-left:@value;}
+	.style-helpers-generator(@n, (@i + 1));
+}
+
+.style-helpers-generator(50);
