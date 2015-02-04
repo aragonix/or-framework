@@ -11,14 +11,14 @@
 @base-font-size: 80%;
 @base-spacing: 1rem;
 @base-radius: 1px;
+@base-color: #4d90fe;
+@base-color-faded: #F0F6FE;
+@base-animation-duration: 25ms;
+@base-animation-delay: 35ms;
 
 @link-color: #1155cc;
-@attention-color: #F0F6FE;
-@active-color: #4d90fe;
-
 @black: #303942;
 @white: #ffffff;
-
 @grey: #eeeeee;
 @grey-dark: #999999;
 @grey-darkest: #464E5A;
@@ -40,46 +40,4 @@
 @import "components/tables.less";
 @import "components/lists.less";
 @import "components/wells.less";
-
-
-@menu-spacing: (@base-spacing*2.25);
-@active-menu-child-border-width: (@base-spacing/1.5);
-
-.or-menu {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-
-	.or-menu-header {
-		font-size: 1.1rem;
-		margin-bottom: @base-spacing;
-	}
-
-	.or-menu-child {
-		padding: 0;
-		padding-left: @menu-spacing;
-
-		a {
-			color: @grey-dark;
-			display: block;
-			height: @menu-spacing;
-			line-height: @menu-spacing;
-			text-decoration: none;
-		}
-	}
-
-	.or-menu-child.or-menu-child--active {
-		border-left: @active-menu-child-border-width solid darken(@grey-dark, 20%);
-		padding-left: @menu-spacing - @active-menu-child-border-width;
-
-		a {
-			color: darken(@grey-dark, 20%);
-		}
-	}
-}
-
-.or-menu.or-menu-primary {
-	.or-menu-child.or-menu-child--active {
-		border-left-color: @active-color;
-	}
-}
+@import "components/menus.less";

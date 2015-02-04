@@ -4138,6 +4138,7 @@ header > h4 small {
 /**
  *  OR Framework - Tables
  */
+/* local variables */
 table {
   border: 1px solid #eeeeee;
   border-collapse: collapse;
@@ -4154,9 +4155,10 @@ table thead tr th {
   background: #eeeeee;
   font-size: 1.1rem;
   font-weight: 400;
-  padding-bottom: 0.5rem;
-  padding-right: 1.5rem;
+  padding-bottom: 0.44444444rem;
+  padding-right: 1.33333333rem;
   text-align: left;
+  text-shadow: 0 1px 0 #f0f0f0;
 }
 table thead tr th:last-child {
   padding-right: 0;
@@ -4168,6 +4170,7 @@ table.or-table-primary {
 table.or-table-primary thead tr th {
   background: #4d90fe;
   color: #ffffff;
+  text-shadow: 0 1px 0 #4088fe;
 }
 /* fixed tables */
 table.or-table-fixed {
@@ -4182,12 +4185,23 @@ table.or-table-striped tbody tr:nth-child(even) td {
   background: #f4f4f4;
 }
 /* hoverable tables */
+table.or-table-hover tbody tr td {
+  -webkit-transition: background 25ms 35ms;
+  -moz-transition: background 25ms 35ms;
+  -o-transition: background 25ms 35ms;
+  transition: background 25ms 35ms;
+}
 table.or-table-hover tbody tr:hover td {
   background: #f0f6fe;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
 }
 /**
  *  OR Framework - Lists
  */
+/* local variables */
 ul,
 ol {
   margin: 0;
@@ -4196,7 +4210,15 @@ ol {
 }
 ul li,
 ol li {
-  padding: 0.33333333rem 0;
+  padding: 0.5rem 0;
+}
+ul li:first-child,
+ol li:first-child {
+  padding-top: 0;
+}
+ul li:last-child,
+ol li:last-child {
+  padding-bottom: 0;
 }
 /**
  *  OR Framework - Wells
@@ -4219,6 +4241,10 @@ ol li {
   background: #f0f6fe;
   border: 1px solid #ccdfff;
 }
+/**
+ *  OR Framework - Menus
+ */
+/* local variables */
 .or-menu {
   list-style-type: none;
   margin: 0;
@@ -4230,21 +4256,32 @@ ol li {
 }
 .or-menu .or-menu-child {
   padding: 0;
-  padding-left: 2.25rem;
 }
 .or-menu .or-menu-child a {
   color: #999999;
   display: block;
   height: 2.25rem;
+  -webkit-transition: background 25ms 35ms;
+  -moz-transition: background 25ms 35ms;
+  -o-transition: background 25ms 35ms;
+  transition: background 25ms 35ms;
   line-height: 2.25rem;
+  padding-left: 2.25rem;
   text-decoration: none;
+}
+.or-menu .or-menu-child a:active {
+  background: #f0f6fe;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
 }
 .or-menu .or-menu-child.or-menu-child--active {
   border-left: 0.66666667rem solid #666666;
-  padding-left: 1.58333333rem;
 }
 .or-menu .or-menu-child.or-menu-child--active a {
   color: #666666;
+  padding-left: 1.58333333rem;
 }
 .or-menu.or-menu-primary .or-menu-child.or-menu-child--active {
   border-left-color: #4d90fe;

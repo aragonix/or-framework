@@ -2,6 +2,9 @@
  *  OR Framework - Tables
  */
 
+/* local variables */
+@table-spacing: (@base-spacing/1.5);
+
 table {
 	border: 1px solid @grey;
 	border-collapse: collapse;
@@ -11,7 +14,7 @@ table {
 	th, td {
 		cursor: default;
 		margin: 0;
-		padding: (@base-spacing/1.5);
+		padding: @table-spacing;
 	}
 
 	thead {
@@ -22,9 +25,10 @@ table {
 				background: @grey;
 				font-size: 1.1rem;
 				font-weight: 400;
-				padding-bottom: (@base-spacing/2);
-				padding-right: (@base-spacing*1.5);
+				padding-bottom: (@table-spacing/1.5);
+				padding-right: (@table-spacing*2);
 				text-align: left;
+				text-shadow: 0 1px 0 darken(@white, 6%);
 
 				&:last-child {
 					padding-right: 0;
@@ -36,11 +40,12 @@ table {
 
 /* primary tables */
 table.or-table-primary {
-	border-color: @active-color;
+	border-color: @base-color;
 
 	thead tr th {
-		background: @active-color;
+		background: @base-color;
 		color: @white;
+		text-shadow: 0 1px 0 darken(@base-color, 2.5%);
 	}
 }
 
@@ -65,7 +70,12 @@ table.or-table-striped {
 /* hoverable tables */
 table.or-table-hover {
 
+	tbody tr td {
+		.lh-transition(background @base-animation-duration @base-animation-delay);
+	}
+
 	tbody tr:hover td {
-		background: @attention-color;
+		background: @base-color-faded;
+		.lh-transition-delay(0);
 	}
 }

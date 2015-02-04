@@ -2,12 +2,23 @@
  *  OR Framework - Lists
  */
 
+/* local variables */
+@list-spacing: (@base-spacing/2);
+
 ul, ol {
 	margin: 0;
 	margin-left: 15px;
 	padding: 0;
 
 	li {
-		padding: (@base-spacing/3) 0;
+		padding: @list-spacing 0;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
 	}
 }

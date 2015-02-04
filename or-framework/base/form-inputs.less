@@ -115,11 +115,11 @@ button, .or-button {
 /* primary buttons */
 button.or-button-primary:enabled, .or-button.or-button-primary:enabled {
 	.lh-background-image(@primary-gradient);
-	border-color: darken(@active-color, 5%);
+	border-color: darken(@base-color, 5%);
 	.lh-border-radius(@base-radius);
 	.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.16), inset 0 1px 2px rgba(255, 255, 255, 0.25));
 	color: @white;
-	text-shadow: 0 1px 0 darken(@active-color, 2.5%);
+	text-shadow: 0 1px 0 darken(@base-color, 2.5%);
 }
 
 /* text and number inputs */
@@ -150,7 +150,7 @@ input[type="text"], input[type="number"], input[type="password"] {
 select, input[type="checkbox"], input[type="password"], input[type="radio"], input[type="text"], input[type="number"], button, .or-button {
 	&:focus {
 		.lh-transition(border-color 200ms);
-		border-color: @active-color;
+		border-color: @base-color;
 		outline: none;
 	}
 }
@@ -194,7 +194,7 @@ select, input[type="checkbox"], input[type="radio"], button, .or-button {
 button.or-button-primary, .or-button.or-button-primary {
 	&:hover:enabled {
 		.lh-background-image(@primary-gradient-hover);
-		border-color: darken(@active-color, 7.5%);
+		border-color: darken(@base-color, 7.5%);
 		.lh-box-shadow(0 1px 0 rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(255, 255, 255, 0.33));
 	}
 }
