@@ -3,15 +3,53 @@
 \*------------------------------------*/
 
 /**
- *  Shared margins
+ *  clearfix
+ */
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+/**
+ *  Visibility helpers
+ */
+
+.is-shown {
+	display: block !important;
+}
+
+.is-visible {
+	visibility: visible !important;
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+.is-invisible {
+	visibility: hidden !important;
+}
+
+
+/**
+ *  Margins
  */
 
 .islet {
 	margin-bottom: ((@base-spacing-modifier/2) * 1rem);
 }
 
-.island {
+.isle {
 	margin-bottom: (@base-spacing-modifier * 1rem);
+}
+
+.island {
+	margin-bottom: ((@base-spacing-modifier*1.5) * 1rem);
 }
 
 .landmark {
@@ -29,18 +67,78 @@ hr {
 
 .style-helpers-generator(@n, @i: 1) when (@i =< @n) {
 	@value: (((@i /10)*@base-spacing-modifier) * 1rem);
-	.fs@{i} {font-size:@value;}
-	.m@{i} {margin:@value;}
-	.mt@{i} {margin-top:@value;}
-	.mr@{i} {margin-right:@value;}
-	.mb@{i} {margin-bottom:@value;}
-	.ml@{i} {margin-left:@value;}
-	.p@{i} {padding:@value;}
-	.pt@{i} {padding-top:@value;}
-	.pr@{i} {padding-right:@value;}
-	.pb@{i} {padding-bottom:@value;}
-	.pl@{i} {padding-left:@value;}
+	.font--sized--@{i} {font-size:@value !important;}
+	.push@{i} {margin:@value !important;}
+	.push--top--@{i} {margin-top:@value !important;}
+	.push--right--@{i} {margin-right:@value !important;}
+	.push--bottom--@{i} {margin-bottom:@value !important;}
+	.push--left--@{i} {margin-left:@value !important;}
+	.soft@{i} {padding:@value !important;}
+	.soft--top--@{i} {padding-top:@value !important;}
+	.soft--right--@{i} {padding-right:@value !important;}
+	.soft--bottom--@{i} {padding-bottom:@value !important;}
+	.soft--left--@{i} {padding-left:@value !important;}
 	.style-helpers-generator(@n, (@i + 1));
 }
 
 .style-helpers-generator(50);
+
+
+/**
+ *  Text styles
+ */
+
+.text--uppercase {
+	text-transform: uppercase !important;
+}
+
+.text--capitalize {
+	text-transform: capitalize !important;
+}
+
+
+/**
+ *  Text alignments
+ */
+
+.text--justify {
+	text-align: justify !important;
+}
+
+.text--right {
+	text-align: right !important;
+}
+
+.text--left {
+	text-align: left !important;
+}
+
+.text--center {
+	text-align: center !important;
+}
+
+
+/**
+ *  Floats
+ */
+
+.float--right {
+	float: right !important;
+}
+
+.float--left {
+	float: left !important;
+}
+
+.float--none {
+	float: none !important;
+}
+
+
+/**
+ *  Muted objects
+ */
+
+.muted {
+	.lh-opacity(0.5) !important;
+}

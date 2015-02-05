@@ -16,13 +16,17 @@
 				overflow-y: scroll;
 			}
 
-			body {
+			#demo {
 				background: #fff;
 				padding: 25px;
 			}
 
 			section {
-				padding: 25px 0;
+				margin-bottom: 25px;
+			}
+
+			section:last-of-type {
+				margin-bottom: 0;
 			}
 
 		</style>
@@ -30,11 +34,100 @@
 
 	<body>
 
-		<p class="landmark">Landmark</p>
-		<p class="island">Island</p>
-		<p class="islet">Islet</p>
-		<hr>
-		<p>Lorem</p>
+		<div id="demo">
+
+			<section>
+				<header>
+					<h1>
+						Typography
+						<small class="soft--left--5">Titles, Links and Paragraphs</small>
+					</h1>
+				</header>
+				<h1>Heading Level 1</h1>
+				<h2>Heading Level 2</h2>
+				<h3>Heading Level 3</h3>
+				<h4>Heading Level 4</h4>
+				<h5>Heading Level 5</h5>
+				<h6>Heading Level 6</h6>
+				<p class="lead">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+				<p class="text--justify">Lorem ipsum dolor sit <strong>amet</strong>, consetetur <em>sadipscing</em> elitr, sed <span class="red">diam</span>, <span class="yellow">diam</span>, <span class="green">diam</span>, <span class="brand-color">diam</span> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo <a href="#">dolores</a> et ea rebum. Lorem <span class="underlined">ipsum</span> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <a href="#">magna</a> aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+			</section>
+
+			<section>
+				<header>
+					<h1>
+						Form &amp; Inputs
+						<small class="soft--left--5">Forms, Input and Button elements</small>
+					</h1>
+				</header>
+				<form action="#">
+					<fieldset>
+						<legend>Personal details</legend>
+						<ul class="form-fields">
+							<li>
+								<label>Text input</label>
+								<input type="text" placeholder="Text input">
+								<input type="text" disabled="disabled" placeholder="Text input disabled">
+							</li>
+							<li>
+								<label>Select input</label>
+								<select>
+									<option>Option value 1</option>
+									<option>Option value 3</option>
+								</select>
+								<select disabled="disabled">
+									<option>Option value 1</option>
+									<option>Option value 3</option>
+								</select>
+							</li>
+							<li>
+								<label>Radio boxes</label>
+								<input type="radio">
+								<span>This is a radio button</span>
+								&nbsp;&nbsp;
+								<input type="radio" disabled="disabled">
+								<span>This is a disabled radio button</span>
+							</li>
+							<li>
+								<label>Checkbox boxes</label>
+								<input type="checkbox">
+								<span>This is a checkbox button</span>
+								&nbsp;&nbsp;
+								<input type="checkbox" disabled="disabled">
+								<span>This is a disabled checkbox button</span>
+							</li>
+							<li>
+								<label>Buttons</label>
+								<button>Button</button>
+								<button class="brand-button">Brand</button>
+								<button disabled="disabled">Button Disabled</button>
+								<button class="brand-button" disabled="disabled">Brand Disabled</button>
+								<button>
+									<i class="fa fa-gear"></i>
+									Button Icon
+								</button>
+								<button class="brand-button">
+									<i class="fa fa-gear"></i>
+									Brand Icon
+								</button>
+								<button disabled="disabled">
+									<i class="fa fa-gear"></i>
+									Button Icon Disabled
+								</button>
+								<button class="brand-button" disabled="disabled">
+									<i class="fa fa-gear"></i>
+									Brand Button Icon Disabled
+								</button>
+							</li>
+							<li class="submit">
+								<button>Submit</button>
+							</li>
+						</ul>
+					</fieldset>
+				</form>
+			</section>
+
+		</div> <!-- / demo -->
 
 	</body>
 

@@ -7,3 +7,38 @@ html {
 	overflow-y: scroll;
 	min-height: 100%;
 }
+
+* {
+	color: @black;
+	.lh-box-sizing(border-box);
+}
+
+a, .link {
+	color: @link-color;
+	outline: none;
+	text-decoration: underline;
+}
+
+a.external, .link.external {
+	&:after {
+		content:"\00A0" "\00BB"!important;
+	}
+}
+
+strong, .strong {
+	font-weight: 700;
+}
+
+em, .italic, .em {
+	font-style: italic;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+small {
+	color: lighten(@black, 33.333%);
+	font-size: 0.7em;
+	text-transform: lowercase;
+}

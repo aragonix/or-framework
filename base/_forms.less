@@ -2,6 +2,54 @@
 	OR Framework - Forms
 \*------------------------------------*/
 
-form {
+/**
+ *  Form fields
+ */
 
+fieldset {
+	border: 1px solid @base-ui-color;
+	margin-bottom: ((@base-spacing-modifier*1.5) * 1rem);
+	padding: (@base-spacing-modifier * 1rem);
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.form-fields {
+
+		> li {
+			margin-bottom: (@base-spacing-modifier * 1rem);
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		> li.submit {
+			border-top: 1px solid @base-ui-color;
+			padding-top: (@base-spacing-modifier * 1rem);
+			text-align: right;
+		}
+	}
+}
+
+
+/**
+ *  Form legend
+ */
+
+legend {
+	font-size: @h3-size;
+	padding: 0 ((@base-spacing-modifier/2) * 1rem);
+}
+
+
+/**
+ *  Form labels
+ */
+
+label {
+	display: block;
+	font-weight: 700;
+	margin-bottom: ((@base-spacing-modifier/2) * 1rem);
 }

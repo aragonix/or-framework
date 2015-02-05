@@ -2,30 +2,38 @@
 	OR Framework - Main
 \*------------------------------------*/
 
+
+/**
+ *  Import vendor utilities
+ */
+
+@import "vendor/_lesshat.less";
+@import "vendor/_colors.less";
+@import "//fonts.googleapis.com/css?family=Droid+Sans:400,700";
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+@import "//cdn.jsdelivr.net/animatecss/3.2.0/animate.css";
+
+
 /**
  *  Global variables
  */
 
 /* base stuff */
-@base-font-size:					75%;
+@base-font-size:					80%;
 @base-line-height:				1;
 @base-spacing-modifier:		1;
 
 /* font */
-@base-font-family:	 			sans-serif;
+@base-font-family:	 			"Droid Sans", "Segoe UI", "Lucida Grande", "Tahoma", sans-serif;
 
 /* colors */
-@base-ui-color:						#4d90fe;
-@base-ui-color-faded:			#f0f6fe;
+@link-color:							#1155cc;
+@base-ui-color:						#e1e1e1;
+@brand-color:							#4d90fe;
+@brand-color-faded:				#f0f6fe;
 @black:										#444444;
 @white:										#ffffff;
-@grey-shade-1:						#eeeeee;
-@grey-shade-2:						darken(@grey-shade-1, 5%);
-@grey-shade-3:						darken(@grey-shade-1, 15%);
-@grey-shade-4:						darken(@grey-shade-1, 25%);
-@grey-shade-5:						lighten(@grey-shade-1, 5%);
-@grey-shade-6:						lighten(@grey-shade-1, 15%);
-@grey-shade-7:						lighten(@grey-shade-1, 25%);
+
 
 /* mobile breakpoints */
 @tab-start:								39rem;
@@ -47,19 +55,10 @@
 
 
 /**
- *  Import vendor utilities
- */
-
-@import "vendor/_lesshat.less";
-@import "vendor/_animate.less";
-
-
-/**
  *  Import generic utilities
  */
 
 @import "generic/_reset.less";
-@import "generic/_clearfix.less";
 @import "generic/_shared.less";
 
 
@@ -72,3 +71,5 @@
 @import "base/_paragraphs.less";
 @import "base/_images.less";
 @import "base/_lists.less";
+@import "base/_tables.less";
+@import "base/_forms.less";
