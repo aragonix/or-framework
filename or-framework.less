@@ -2,7 +2,6 @@
 	OR Framework - Main
 \*------------------------------------*/
 
-
 /**
  *  Import vendor utilities
  */
@@ -22,6 +21,9 @@
 @base-font-size:					80%;
 @base-line-height:				1;
 @base-spacing-modifier:		1;
+@base-border-radius:			1px;
+@base-animation-duration:	200ms;
+@base-animation-delay:		200ms;
 
 /* font */
 @base-font-family:	 			"Droid Sans", "Segoe UI", "Lucida Grande", "Tahoma", sans-serif;
@@ -33,12 +35,6 @@
 @brand-color-faded:				#f0f6fe;
 @black:										#444444;
 @white:										#ffffff;
-
-
-/* mobile breakpoints */
-@tab-start:								39rem;
-@desk-start:							64rem;
-@desk-wide-start:					80rem;
 
 /* font sizes */
 @giga-size:								2rem;
@@ -52,6 +48,12 @@
 @h4-size:									1.2rem;	// .delta
 @h5-size:									1.1rem;	// .epsilon
 @h6-size:									1rem;		// .zeta
+
+/* mobile breakpoints */
+@me-sm: 35.5rem;
+@me-md: 48rem;
+@me-lg: 68rem;
+@me-xl: 80rem;
 
 
 /**
@@ -72,4 +74,16 @@
 @import "base/_images.less";
 @import "base/_lists.less";
 @import "base/_tables.less";
+@import "base/_inputs.less";
 @import "base/_forms.less";
+
+
+/**
+ *  Import optional objects
+ */
+
+@import "objects/_grid.less";
+@import "objects/_menus.less";
+@import "objects/_wells.less";
+@import "objects/_notifications.less";
+@import "objects/_boxes.less";

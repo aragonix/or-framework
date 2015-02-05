@@ -2,35 +2,77 @@
 	OR Framework - Tables
 \*------------------------------------*/
 
+/* local variables */
+@hover-animation-duration: 25ms;
+@hover-animation-delay: 35ms;
+
+
+/**
+ *  Default table
+ */
+
 table {
-	table-layout: fixed;
-	width: 100%;
+	border: 1px solid @base-ui-color;
+	border-collapse: separate;
+	.lh-border-radius(@base-border-radius);
 
 	th, td {
-		padding: ((@base-spacing-modifier/5) * 1rem);
+		padding: ((@base-spacing-modifier/1.5) * 1rem) ((@base-spacing-modifier/1.25) * 1rem);
 		text-align:left;
+	}
 
-		@media screen and (min-width: @tab-start){
-			padding: ((@base-spacing-modifier/5) * 1rem);
+	thead {
+		background: @base-ui-color;
+		border-top-left-radius: @base-border-radius;
+		border-top-right-radius: @base-border-radius;
+		font-size: 1.125rem;
+		text-shadow: 0 1px 0 darken(@white, 6%);
+
+		th:first-child {
+			border-top-left-radius: @base-border-radius;
+		}
+
+		th:last-child {
+			border-top-right-radius: @base-border-radius;
+		}
+	}
+
+	tbody {
+		border-bottom-left-radius: @base-border-radius;
+		border-bottom-right-radius: @base-border-radius;
+
+		tr:last-child, tr:last-child td:last-child {
+			border-bottom-right-radius: @base-border-radius;
 		}
 	}
 }
 
 
 /**
- *  Bordered tables
+ *  Branded table
  */
 
-.table--bordered {
+.table--branded {
+	border-color: @brand-color;
 
-	td, td {
-		border:1px solid @base-ui-color;
+	thead {
+		background: @brand-color;
+		text-shadow: 0 1px 0 darken(@brand-color, 2.5%);
 
-		&:empty {
-			border: none;
+		th {
+			color: @white;
 		}
 	}
+}
 
+
+/**
+ *  Fixed full width tables
+ */
+
+.table--fixed {
+	table-layout: fixed;
+	width: 100%;
 }
 
 
@@ -39,11 +81,50 @@ table {
  */
 
 .table--striped {
-
 	tbody tr:nth-of-type(odd) {
 		background-color: lighten(@base-ui-color, 10%);
 	}
+}
 
+
+/**
+ *  Bordered table
+ */
+
+.table--bordered {
+
+	tbody tr {
+
+		td {
+			border-right: 1px solid @base-ui-color;
+			border-bottom: 1px solid @base-ui-color;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+
+		&:last-child td {
+			border-bottom: 0;
+		}
+	}
+}
+
+
+/**
+ *  Hoverable table
+ */
+
+.table--hover {
+
+	tbody tr td {
+		.lh-transition(background @hover-animation-duration @hover-animation-delay);
+	}
+
+	tbody tr:hover td {
+		background: @brand-color-faded;
+		.lh-transition-delay(0);
+	}
 }
 
 

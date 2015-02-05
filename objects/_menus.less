@@ -1,0 +1,48 @@
+/*------------------------------------*\
+	OR Framework - Menus
+\*------------------------------------*/
+
+/* local variables */
+@active-menu-border-width: ((@base-spacing-modifier/1.35) * 1rem);
+@menu-spacing: ((@base-spacing-modifier*1.5) * 1rem);
+
+
+/**
+ *  Default menu
+ */
+
+.menu {
+	list-style-type: none;
+	margin: 0;
+
+	li {
+		color: lighten(@black, 33.333%);
+		padding: 0;
+		padding-left: (@menu-spacing + @active-menu-border-width);
+
+		a {
+			color: inherit;
+			display: block;
+			padding: ((@base-spacing-modifier/1.35) * 1rem) 0;
+			text-decoration: none;
+		}
+
+	}
+
+	li.active {
+		border-left: @active-menu-border-width solid lighten(@black, 15%);
+		color: lighten(@black, 15%);
+		padding-left: @menu-spacing;
+	}
+}
+
+
+/**
+ *  Brand menu
+ */
+
+.menu--branded {
+	li.active {
+		border-color: @brand-color;
+	}
+}

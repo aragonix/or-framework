@@ -1,0 +1,45 @@
+/*------------------------------------*\
+	OR Framework - Notifications
+\*------------------------------------*/
+
+/**
+ *  Default notification
+ */
+
+.notification {
+	background: @brand-color-faded;
+	border: 1px solid @brand-color;
+	.lh-border-radius(@base-border-radius);
+	.lh-box-shadow(inset 0 0 1px 0px rgba(255, 255, 255, 0.75));
+	padding: ((@base-spacing-modifier/2) * 1rem);
+}
+
+
+/**
+ *  Warning
+ */
+
+.notification.notification--warning {
+	.warning--background;
+	border-color: @yellow;
+}
+
+
+/**
+ *  Danger
+ */
+
+.notification.notification--danger {
+	.danger--background;
+	border-color: @red;
+}
+
+
+/**
+ *  Success
+ */
+
+.notification.notification--success {
+	.success--background;
+	border-color: @green;
+}

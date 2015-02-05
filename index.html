@@ -11,18 +11,15 @@
 
 			/* Demo styles */
 			html {
-				background: #f1f1f1;
-				padding: 25px;
 				overflow-y: scroll;
 			}
 
 			#demo {
-				background: #fff;
-				padding: 25px;
+				padding: 25px 50px 100px;
 			}
 
 			section {
-				margin-bottom: 25px;
+				margin-bottom: 75px;
 			}
 
 			section:last-of-type {
@@ -62,12 +59,17 @@
 				</header>
 				<form action="#">
 					<fieldset>
-						<legend>Personal details</legend>
+						<legend>Default Form</legend>
 						<ul class="form-fields">
 							<li>
 								<label>Text input</label>
 								<input type="text" placeholder="Text input">
 								<input type="text" disabled="disabled" placeholder="Text input disabled">
+								<button>Button</button>
+							</li>
+							<li>
+								<label>Textarea</label>
+								<textarea></textarea>
 							</li>
 							<li>
 								<label>Select input</label>
@@ -88,7 +90,7 @@
 								<input type="radio" disabled="disabled">
 								<span>This is a disabled radio button</span>
 							</li>
-							<li>
+							<li class="warning--background">
 								<label>Checkbox boxes</label>
 								<input type="checkbox">
 								<span>This is a checkbox button</span>
@@ -99,32 +101,268 @@
 							<li>
 								<label>Buttons</label>
 								<button>Button</button>
-								<button class="brand-button">Brand</button>
+								<button class="button--branded">Brand</button>
 								<button disabled="disabled">Button Disabled</button>
-								<button class="brand-button" disabled="disabled">Brand Disabled</button>
+								<button class="button--branded" disabled="disabled">Brand Disabled</button>
 								<button>
-									<i class="fa fa-gear"></i>
+									<i class="fa fa-gear soft--right--3"></i>
 									Button Icon
 								</button>
-								<button class="brand-button">
-									<i class="fa fa-gear"></i>
+								<button class="button--branded">
+									<i class="fa fa-gear soft--right--3"></i>
 									Brand Icon
 								</button>
 								<button disabled="disabled">
-									<i class="fa fa-gear"></i>
+									<i class="fa fa-gear soft--right--3"></i>
 									Button Icon Disabled
 								</button>
-								<button class="brand-button" disabled="disabled">
-									<i class="fa fa-gear"></i>
+								<button class="button--branded" disabled="disabled">
+									<i class="fa fa-gear soft--right--3"></i>
 									Brand Button Icon Disabled
 								</button>
-							</li>
-							<li class="submit">
-								<button>Submit</button>
 							</li>
 						</ul>
 					</fieldset>
 				</form>
+				<br><br>
+				<form action="#" class="form--hover">
+					<fieldset>
+						<legend>Hover Form</legend>
+						<ul class="form-fields">
+							<li>
+								<label>Text input</label>
+								<input type="text" placeholder="Text input">
+								<input type="text" disabled="disabled" placeholder="Text input disabled">
+								<button>Button</button>
+							</li>
+							<li>
+								<label>Textarea</label>
+								<textarea></textarea>
+							</li>
+						</ul>
+					</fieldset>
+				</form>
+			</section>
+
+			<section>
+				<header>
+					<h1>
+						Menus &amp; Lists
+						<small class="soft--left--5">Simple navigation lists and menus</small>
+					</h1>
+				</header>
+				<div class="grid-row">
+					<div class="grid-sm--1--4">
+						<ul class="menu">
+							<li class="active"><a href="#">Default menu item</a></li>
+							<li><a href="#">Default menu item</a></li>
+							<li><a href="#">Default menu item</a></li>
+						</ul>
+					</div>
+					<div class="grid-sm--1--4">
+						<ul class="menu menu--branded">
+							<li class="active"><a href="#">Default menu item</a></li>
+							<li><a href="#">Default menu item</a></li>
+							<li><a href="#">Default menu item</a></li>
+						</ul>
+					</div>
+					<div class="grid-sm--1--4">
+						<ul>
+							<li>Default list item</li>
+							<li>Default list item</li>
+							<li>Default list item</li>
+						</ul>
+					</div>
+					<div class="grid-sm--1--4">
+						<ol>
+							<li>Default list item</li>
+							<li>Default list item</li>
+							<li>Default list item</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<header>
+					<h1>
+						Tables
+						<small class="soft--left--5">Simple table layouts</small>
+					</h1>
+				</header>
+				<div class="grid-row">
+					<div class="grid-sm--1--3">
+						<table>
+							<thead>
+								<tr>
+									<th>Table header</th>
+									<th>Table header</th>
+									<th>Table header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="grid-sm--1--3">
+						<table class="table--branded">
+							<thead>
+								<tr>
+									<th>Table header</th>
+									<th>Table header</th>
+									<th>Table header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="grid-sm--1--3">
+						<table class="table--striped">
+							<thead>
+								<tr>
+									<th>Table header</th>
+									<th>Table header</th>
+									<th>Table header</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+								<tr>
+									<td>Table column</td>
+									<td>Table column</td>
+									<td>Table column</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<br><br>
+				<table class="table--fixed table--hover table--bordered">
+					<thead>
+						<tr>
+							<th>Table header</th>
+							<th>Table header</th>
+							<th>Table header</th>
+							<th>Table header</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td class="info--background">Table column</tds>
+								<td class="warning--background">Table column</td>
+								<td class="danger--background">Table column</td>
+								<td class="success--background">Table column</tds>
+						</tr>
+						<tr>
+							<td>Table column</td>
+							<td>Table column</td>
+							<td>Table column</td>
+							<td>Table column</td>
+						</tr>
+						<tr>
+							<td>Table column</td>
+							<td>Table column</td>
+							<td>Table column</td>
+							<td>Table column</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<header>
+					<h1>
+						Wells &amp; Notifications
+						<small class="soft--left--5">Wells, boxes and notifications</small>
+					</h1>
+				</header>
+				<div class="grid-row">
+					<div class="grid-sm--1--3 soft--right--10">
+						<div class="well">
+							well
+						</div>
+						<br>
+						<div class="well well--branded">
+							well
+						</div>
+					</div>
+					<div class="grid-sm--1--3 soft--right--10">
+						<div class="notification">
+							Lorem ipsum dolor
+						</div>
+						<br>
+						<div class="notification notification--warning">
+							notification
+						</div>
+						<br>
+						<div class="notification notification--danger">
+							notification
+						</div>
+						<br>
+						<div class="notification notification--success">
+							notification
+						</div>
+					</div>
+					<div class="grid-sm--1--3">
+						<div class="box">
+							<div class="box-header">
+								box-header
+							</div>
+							<div class="box-content">
+								box-content
+							</div>
+						</div>
+						<br>
+						<div class="box box--branded">
+							<div class="box-header">
+								box-header
+							</div>
+							<div class="box-content">
+								box-content
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 
 		</div> <!-- / demo -->

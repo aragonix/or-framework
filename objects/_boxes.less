@@ -1,0 +1,40 @@
+/*------------------------------------*\
+	OR Framework - Boxes
+\*------------------------------------*/
+
+/**
+ *  Default box
+ */
+
+.box {
+	border: 1px solid @base-ui-color;
+	.lh-border-radius(@base-border-radius);
+
+	.box-header {
+		background: @base-ui-color;
+		border-top-left-radius: @base-border-radius;
+		border-top-right-radius: @base-border-radius;
+		font-size: 1.125rem;
+		text-shadow: 0 1px 0 darken(@white, 6%);
+		padding: ((@base-spacing-modifier/1.5) * 1rem);
+	}
+
+	.box-content {
+		padding: ((@base-spacing-modifier/1.5) * 1rem);
+	}
+}
+
+
+/**
+ *  Branded box
+ */
+
+.box--branded {
+	border-color: @brand-color;
+
+	.box-header {
+		background: @brand-color;
+		color: @white;
+		text-shadow: 0 1px 0 darken(@brand-color, 2.5%);
+	}
+}

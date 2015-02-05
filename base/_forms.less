@@ -2,54 +2,60 @@
 	OR Framework - Forms
 \*------------------------------------*/
 
+/* local variables */
+@form-field-spacing: ((@base-spacing-modifier/2) * 1rem);
+
 /**
- *  Form fields
+ *  Default form
  */
 
-fieldset {
-	border: 1px solid @base-ui-color;
-	margin-bottom: ((@base-spacing-modifier*1.5) * 1rem);
-	padding: (@base-spacing-modifier * 1rem);
+form {
 
-	&:last-of-type {
-		margin-bottom: 0;
+	legend {
+		font-size: @h3-size;
+		padding: 0 ((@base-spacing-modifier/2) * 1rem);
 	}
 
-	.form-fields {
+	label {
+		display: block;
+		font-weight: 700;
+		margin-bottom: ((@base-spacing-modifier/2) * 1rem);
+	}
 
-		> li {
-			margin-bottom: (@base-spacing-modifier * 1rem);
+	fieldset {
+		border: 1px solid @base-ui-color;
+		margin-bottom: ((@base-spacing-modifier*1.5) * 1rem);
+		padding: ((@base-spacing-modifier * 1rem) - @form-field-spacing);
 
-			&:last-of-type {
-				margin-bottom: 0;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		.form-fields {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			> li {
+				padding: @form-field-spacing;
 			}
 		}
-
-		> li.submit {
-			border-top: 1px solid @base-ui-color;
-			padding-top: (@base-spacing-modifier * 1rem);
-			text-align: right;
-		}
 	}
 }
 
 
 /**
- *  Form legend
+ *  Hoverable form
  */
 
-legend {
-	font-size: @h3-size;
-	padding: 0 ((@base-spacing-modifier/2) * 1rem);
-}
+.form--hover {
 
+	.form-fields li {
+		.lh-transition(background @hover-animation-duration @hover-animation-delay);
+	}
 
-/**
- *  Form labels
- */
-
-label {
-	display: block;
-	font-weight: 700;
-	margin-bottom: ((@base-spacing-modifier/2) * 1rem);
+	.form-fields li:hover {
+		background: @brand-color-faded;
+		.lh-transition-delay(0);
+	}
 }

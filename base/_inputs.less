@@ -1,0 +1,247 @@
+/*------------------------------------*\
+	OR Framework - Inputs & Buttons
+\*------------------------------------*/
+
+/* local variables */
+@disabled-gradient: linear-gradient(#f1f1f1, #f1f1f1 40%, #e6e6e6);
+@default-gradient: linear-gradient(#ededed, #ededed 40%, #dedede);
+@default-gradient-hover: linear-gradient(lighten(#ededed, 1%), lighten(#ededed, 1%) 40%, lighten(#dedede, 0.8%));
+@default-gradient-active: linear-gradient(darken(#ededed, 2.2%), darken(#ededed, 2.2%) 40%, darken(#dedede, 2.6%));
+@brand-gradient: linear-gradient(#83b1fc, #649ffc 40%, #4d90fe);
+@brand-gradient-active: linear-gradient(darken(#83b1fc, 2.2%), darken(#649ffc, 2.2%) 40%, darken(#4d90fe, 2.6%));
+@brand-gradient-hover: linear-gradient(lighten(#83b1fc, 1.333%), lighten(#649ffc, 1.333%) 40%,lighten(#4d90fe, 1.133%));
+@disabled-shadow: 0 1px 0 rgba(80, 80, 80, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+@default-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+@default-shadow-light: 0 1px 0 rgba(0, 0, 0, 0.16), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+@default-shadow-hover: 0 1px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+@default-shadow-hover-light: 0 1px 0 rgba(0, 0, 0, 0.24), inset 0 1px 2px rgba(255, 255, 255, 0.33);
+@checkbox-background: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wDBhYcG79aGIsAAACbSURBVBjTjdFBCkFhFAXgj4fp24PBy0SZ2ICRXRgYGb2xlKzBSEo2YgsiKWVoZgFKMjD5X/2Ux6lb99bpnNO5lKMR5i8MsEQHkhJiEzlS9HCqfiFWMUIt3AfsC3KKLCL30Qr7HfM4Ro4h6rhiEqmusIMKuphGqo+ogSPGcbYLzh91vdkXSHDDBk+0gxussS3rNcMCs+D6E18/9gLPPhbDshfzLgAAAABJRU5ErkJggg==";
+@caret-down: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF8AAABfABv7gDTAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACUSURBVBiVjYyhCsJQGEbPzzXZTMLQsgcQbW7NmwaCxTfQ4jP4KkajwTfQuHSZFtsYoqB1mETcb7EoY3ridzifdEO7QAkoQ0jMPZ845x6lHqgJLBXGQOPL5VLovCoGMNdTdvTa/l6FCKi/95uITJN4s66KAQzA5ZylzZZ/EBgCT7SY7eLtCtBfBx90Qmt7/cEIkH+bF58MKoZeuLozAAAAAElFTkSuQmCC";
+@caret-down-disabled: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF2AAABdgBCRoqvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACFSURBVBiVjcsxCgIxGEThN4sX8Di2HsBGsgE7RQhewatYWiWFhZ2tF7DLKSSwLFZCflvRZfWVM3yKMR4kzRhI0q2UsgkhPId+gAlwNLOlpOnH15nZfgwDNN77q6QVcH/be2Dbtu15DAM0AM65i6Q10AGPWusu53z6hb9KKc1TSgsz07/mBZ61K+ONNAX0AAAAAElFTkSuQmCC";
+@checkbox-background: ~"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wDBhYcG79aGIsAAACbSURBVBjTjdFBCkFhFAXgj4fp24PBy0SZ2ICRXRgYGb2xlKzBSEo2YgsiKWVoZgFKMjD5X/2Ux6lb99bpnNO5lKMR5i8MsEQHkhJiEzlS9HCqfiFWMUIt3AfsC3KKLCL30Qr7HfM4Ro4h6rhiEqmusIMKuphGqo+ogSPGcbYLzh91vdkXSHDDBk+0gxussS3rNcMCs+D6E18/9gLPPhbDshfzLgAAAABJRU5ErkJggg==";
+
+
+/**
+ *  Reset input and buttons
+ */
+
+input, button, .button, select, textarea {
+	background: @base-ui-color;
+	border: 0;
+	.lh-border-radius(@base-border-radius);
+	color: @black;
+	display: inline-block;
+	font-family: @base-font-family;
+	line-height: @base-line-height;
+	margin: 0;
+	outline: none !important;
+	padding: 0;
+
+	/* Disabled */
+	&:disabled {
+		cursor: not-allowed !important;
+	}
+}
+
+
+/**
+ *  Input boxes
+ */
+
+input, textarea {
+	background: @white;
+	border: 1px solid @base-ui-color;
+	padding: ((@base-spacing-modifier/2) * 1rem);
+
+	/* Focues */
+	&:focus {
+		.lh-transition(border-color @base-animation-duration);
+		border-color: @brand-color;
+		outline: none;
+	}
+
+	/* Disabled */
+	&:disabled {
+		background: lighten(@base-ui-color, 10%);
+	}
+}
+
+
+/**
+ *  Button styled elements
+ */
+
+select {
+	.lh-appearance(none);
+	padding: ((@base-spacing-modifier/2) * 1rem);
+}
+
+button, .button {
+	padding: ((@base-spacing-modifier/1.75) * 1rem) ((@base-spacing-modifier) * 1rem);
+}
+
+button, .button, select, input[type="checkbox"], input[type="radio"], input[type="button"], input[type="submit"] {
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	.lh-background-image(@default-gradient);
+	.lh-box-shadow(@default-shadow);
+	.lh-user-select(none);
+	text-shadow: 0 1px 0 darken(@white, 6%);
+	-webkit-appearance: none; // dont remove moz appearance, because we cant style its radio buttons (https://bugzilla.mozilla.org/show_bug.cgi?id=649849)
+
+	/* Elements inside buttons (f.e. icons) */
+	> * {
+		color: inherit;
+		text-shadow: inherit;
+	}
+
+	/* Hovering */
+	&:hover:enabled {
+		.lh-background-image(@default-gradient-hover);
+		border-color: rgba(0, 0, 0, 0.3);
+		.lh-box-shadow(@default-shadow-hover);
+	}
+
+	/* Active */
+	&:active:enabled {
+		.lh-background-image(@default-gradient-active);
+		.lh-box-shadow(none);
+		text-shadow: none;
+	}
+
+	/* Focues */
+	&:focus {
+		.lh-transition(border-color @base-animation-duration);
+		border-color: @brand-color;
+		outline: none;
+	}
+
+	/* Disabled */
+	&:disabled {
+		.lh-background-image(@disabled-gradient);
+		border-color: rgba(80, 80, 80, 0.2);
+		.lh-box-shadow(@disabled-shadow);
+		color: darken(@base-ui-color, 25%);
+		text-shadow: none;
+	}
+}
+
+// narrowed spacing for Firefox
+@-moz-document url-prefix() {
+	select {
+		padding: ((@base-spacing-modifier/2.8) * 1rem);
+	}
+
+	button, .button {
+		padding: ((@base-spacing-modifier/2.4) * 1rem) ((@base-spacing-modifier) * 1rem);
+	}
+}
+
+
+/**
+ *  Brand Buttons
+ */
+
+.button--branded {
+	.lh-background-image(@brand-gradient);
+	border-color: darken(@brand-color, 5%);
+	color: @white;
+	.lh-box-shadow(@default-shadow-light);
+	text-shadow: 0 1px 0 darken(@brand-color, 2.5%);
+
+	/* Hovering */
+	&:hover:enabled {
+		.lh-background-image(@brand-gradient-hover);
+		border-color: darken(@brand-color, 7.5%);
+		.lh-box-shadow(@default-shadow-hover-light);
+	}
+
+	/* Active */
+	&:active:enabled {
+		.lh-background-image(@brand-gradient-active);
+	}
+
+	/* Disabled */
+	&:disabled {
+		.lh-background-image(@brand-color-faded);
+		border-color: rgba(80, 80, 80, 0.2);
+		.lh-box-shadow(@disabled-shadow);
+		color: darken(@base-ui-color, 25%);
+	}
+}
+
+
+/**
+ *  Select stlyes
+ */
+
+select {
+	background-image: url(@caret-down), @default-gradient;
+	background-position: right center;
+	background-repeat: no-repeat;
+	.lh-appearance(none);
+	padding-right: ((@base-spacing-modifier*2) * 1rem);
+
+	option {
+		background: @base-ui-color;
+	}
+
+	/* Disabled */
+	&:disabled {
+		background-image: url(@caret-down-disabled), @disabled-gradient;
+	}
+
+	/* Hover */
+	&:hover:enabled {
+		background-image: url(@caret-down), @default-gradient-hover;
+	}
+
+	/* Active */
+	&:active:enabled {
+		background-image: url(@caret-down), @default-gradient-active;
+	}
+}
+
+
+/**
+ *  Radio and Checkboxxes
+ */
+
+input[type="checkbox"], input[type="radio"] {
+	margin-right: ((@base-spacing-modifier/4) * 1rem);
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	height: 15px;
+	width: 15px;
+
+	&:checked::before {
+		content: "";
+		display: block;
+		.lh-user-select(none);
+		position: absolute;
+	}
+}
+
+input[type="checkbox"] {
+	&:checked::before {
+		background-image: url(@checkbox-background);
+		background-size: 100% 100%;
+		bottom: 1px;
+		left: 1px;
+		right: 1px;
+		top: 1px;
+	}
+}
+
+input[type="radio"] {
+	.lh-border-radius(100%);
+
+	&:checked::before {
+		background-color: @black;
+		.lh-border-radius(100%);
+		bottom: 3px;
+		left: 3px;
+		right: 3px;
+		top: 3px;
+	}
+}

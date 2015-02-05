@@ -8,6 +8,13 @@ html {
 	min-height: 100%;
 }
 
+// Little smaller fonts for Firefox
+@-moz-document url-prefix() {
+	html {
+		font-size: (@base-font-size - 5%);
+	}
+}
+
 * {
 	color: @black;
 	.lh-box-sizing(border-box);

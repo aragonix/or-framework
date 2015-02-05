@@ -3,6 +3,26 @@
 \*------------------------------------*/
 
 /**
+ *  Default list styles
+ */
+
+ul, ol {
+	margin-left: 15px;
+
+	li {
+		padding: ((@base-spacing-modifier/2) * 1rem) 0;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+/**
  *  Remove vertical space from nested lists
  */
 

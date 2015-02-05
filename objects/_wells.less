@@ -1,0 +1,25 @@
+/*------------------------------------*\
+	OR Framework - Wells
+\*------------------------------------*/
+
+/**
+ *  Default well
+ */
+
+.well {
+	background: lighten(@base-ui-color, 10%);
+	border: 1px solid @base-ui-color;
+	.lh-border-radius(@base-border-radius);
+	.lh-box-shadow(inset 0 0 1px 0px rgba(255, 255, 255, 0.75));
+	padding: (@base-spacing-modifier * 1rem);
+}
+
+
+/**
+ *  Branded well
+ */
+
+.well.well--branded {
+	background: @brand-color-faded;
+	border-color: lighten(@brand-color, 25%);
+}
