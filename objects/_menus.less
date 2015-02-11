@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 /* local variables */
-@active-menu-border-width: ((@base-spacing-modifier/1.35) * 1rem);
+@active-menu-border-width: ((@base-spacing-modifier/1.75) * 1rem);
 @menu-spacing: ((@base-spacing-modifier*1.5) * 1rem);
 
 
@@ -29,9 +29,15 @@
 
 	}
 
+	li.menu-title {
+		color: lighten(@black, 7.5%);
+		font-size: 1.125rem;
+		text-transform: capitalize;
+	}
+
 	li.active {
-		border-left: @active-menu-border-width solid lighten(@black, 15%);
-		color: lighten(@black, 15%);
+		border-left: @active-menu-border-width solid lighten(@black, 7.5%);
+		color: lighten(@black, 7.5%);
 
 			a {
 				padding-left: @menu-spacing;
