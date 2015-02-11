@@ -18,12 +18,12 @@
 	li {
 		color: lighten(@black, 33.333%);
 		padding: 0;
-		padding-left: (@menu-spacing + @active-menu-border-width);
 
 		a {
 			color: inherit;
 			display: block;
 			padding: ((@base-spacing-modifier/1.35) * 1rem) 0;
+			padding-left: (@menu-spacing + @active-menu-border-width);
 			text-decoration: none;
 		}
 
@@ -32,7 +32,10 @@
 	li.active {
 		border-left: @active-menu-border-width solid lighten(@black, 15%);
 		color: lighten(@black, 15%);
-		padding-left: @menu-spacing;
+
+			a {
+				padding-left: @menu-spacing;
+			}
 	}
 }
 
@@ -44,5 +47,26 @@
 .menu--branded {
 	li.active {
 		border-color: @brand-color;
+	}
+}
+
+
+/**
+ *  Active menu
+ */
+
+.menu--active {
+
+	li {
+
+		a {
+			.lh-transition(background @hover-animation-duration @hover-animation-delay);
+
+			&:active {
+				background: @brand-color-faded;
+				.lh-transition-delay(0);
+			}
+		}
+
 	}
 }

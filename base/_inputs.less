@@ -111,7 +111,7 @@ button, .button, select, input[type="checkbox"], input[type="radio"], input[type
 	&:focus {
 		.lh-transition(border-color @base-animation-duration);
 		border-color: @brand-color;
-		outline: none;
+		outline: none !important;
 	}
 
 	/* Disabled */
@@ -120,7 +120,7 @@ button, .button, select, input[type="checkbox"], input[type="radio"], input[type
 		border-color: rgba(80, 80, 80, 0.2);
 		.lh-box-shadow(@disabled-shadow);
 		color: darken(@base-ui-color, 25%);
-		text-shadow: none;
+		text-shadow: none !important;
 	}
 }
 
