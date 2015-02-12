@@ -18,11 +18,12 @@
 	li {
 		color: lighten(@black, 33.333%);
 		padding: 0;
+		padding-left: @active-menu-border-width;
 
 		a {
 			color: inherit;
 			display: block;
-			padding: ((@base-spacing-modifier/1.35) * 1rem) 0;
+			padding: ((@base-spacing-modifier/1.5) * 1rem) 0;
 			padding-left: (@menu-spacing + @active-menu-border-width);
 			text-decoration: none;
 		}
@@ -43,10 +44,11 @@
 	li.active {
 		border-left: @active-menu-border-width solid lighten(@black, 10%);
 		color: lighten(@black, 10%);
+		padding-left: 0;
 
-			a {
-				padding-left: @menu-spacing;
-			}
+		a {
+			text-shadow: 0 1px 0 darken(@white, 6%);
+		}
 	}
 }
 
@@ -73,7 +75,7 @@
 
 .menu--active {
 
-	li {
+	li:not(.menu-title) {
 
 		a {
 			.lh-transition(background @hover-animation-duration @hover-animation-delay);
