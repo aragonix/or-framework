@@ -59,3 +59,45 @@ form {
 		.lh-transition-delay(0);
 	}
 }
+
+
+/**
+ *  Horizontal form
+ */
+
+.form--horizontal {
+
+	.form-fields li {
+		display: block;
+
+		// mobiles + up
+		@media (min-width: @me-sm) {
+			.clearfix;
+		}
+	}
+
+	label {
+		display: block;
+
+		// mobiles + up
+		@media (min-width: @me-sm) {
+			.hide-text-overflow;
+			display: inline-block;
+			width: 17.5%;
+			max-width: 30rem;
+			padding-right: 2rem;
+			text-align: right;
+			vertical-align: top;
+		}
+	}
+
+	input, select, textarea {
+		width: 100%;
+
+		// mobiles + up
+		@media (min-width: @me-sm) {
+			float: right;
+			width: 82.5%;
+		}
+	}
+}
