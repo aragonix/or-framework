@@ -4,6 +4,7 @@
 
 /* local variables */
 @form-field-spacing: ((@base-spacing-modifier/2) * 1rem);
+@horizontal-label-width: 17.5%;
 
 /**
  *  Default form
@@ -67,37 +68,33 @@ form {
 
 .form--horizontal {
 
-	.form-fields li {
+	.form-fields li, label {
 		display: block;
-
-		// mobiles + up
-		@media (min-width: @me-sm) {
-			.clearfix;
-		}
-	}
-
-	label {
-		display: block;
-
-		// mobiles + up
-		@media (min-width: @me-sm) {
-			.hide-text-overflow;
-			display: inline-block;
-			width: 17.5%;
-			max-width: 30rem;
-			padding-right: 2rem;
-			text-align: right;
-			vertical-align: top;
-		}
 	}
 
 	input, select, textarea {
 		width: 100%;
+	}
 
-		// mobiles + up
-		@media (min-width: @me-sm) {
+	// mobiles + up
+	@media (min-width: @me-sm) {
+
+		.form-fields li {
+			.clearfix;
+		}
+
+		label {
+			.hide-text-overflow;
+			display: inline-block;
+			width: @horizontal-label-width;
+			padding-right: ((@base-spacing-modifier*2) * 1rem);
+			text-align: right;
+			vertical-align: top;
+		}
+
+		input, select, textarea {
 			float: right;
-			width: 82.5%;
+			width: (100% - @horizontal-label-width);
 		}
 	}
 }
