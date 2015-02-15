@@ -66,7 +66,6 @@ input, textarea {
 	}
 }
 
-
 /**
  *  Button styled elements
  */
@@ -74,6 +73,23 @@ input, textarea {
 select {
 	.lh-appearance(none);
 	padding: ((@base-spacing-modifier/2) * 1rem);
+
+	option:checked {
+		background: @brand-color;
+		text-shadow: none !important;
+	}
+}
+
+select[multiple] {
+
+	optgroup {
+		padding: ((@base-spacing-modifier/4) * 1rem) 0;
+	}
+
+	option {
+		background: none !important;
+		padding: ((@base-spacing-modifier/4) * 1rem);
+	}
 }
 
 button, .button {
@@ -124,6 +140,12 @@ button, .button, select, input[type="checkbox"], input[type="radio"], input[type
 		color: darken(@base-ui-color, 25%);
 		text-shadow: none !important;
 	}
+}
+
+// normal behaviour for active multi selects
+select[multiple]:active {
+	.lh-background-image(@default-gradient-hover) !important;
+	.lh-box-shadow(@default-shadow-hover) !important;
 }
 
 // narrowed spacing for Firefox
